@@ -1,38 +1,93 @@
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.navbar {
+  background-color: #333;
   color: white;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-brand {
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  color: #071e55;
+}
+
+.nav-link:hover {
+  color: #8ea3d4;
+  transition: 0.4s ease-out;
+}
+
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  /* font-weight: bold; */
+}
+
+.background-image {
+  background-image: url('images/bg-home.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+
+}
+
+
+/* Your existing styles */
+
+.services-section {
+  text-align: center;
+  padding: 30px;
+  background-color: #f9f9f9;
+  /* Set the background color as needed */
+}
+
+.services-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  font-size: 16px;
+  color: #666;
+}
+
+.additional-services {
+  text-align: center;
+  padding: 30px;
+}
+
+.additional-services h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.additional-services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.additional-services li {
+  font-size: 16px;
+  margin-bottom: 8px;
 }
