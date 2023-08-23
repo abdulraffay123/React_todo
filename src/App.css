@@ -1,40 +1,28 @@
-.App {
-  text-align: center;
-  margin-top: 50px;
+/* App.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.input {
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
-input {
-  padding: 5px;
-  margin-right: 10px;
+.button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-button {
-  padding: 5px 10px;
-  margin-left: 5px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px 0;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-li button {
-  padding: 2px 5px;
-  margin-left: 5px;
-  font-size: 12px;
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
 }

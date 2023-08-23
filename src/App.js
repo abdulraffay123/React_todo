@@ -1,59 +1,39 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
+const App = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [cardContent, setCardContent] = useState('');
 
-function App() {
-  const [items, setItems] = useState([]);
-  const [newItem, setNewItem] = useState('');
-
-  const addItem = () => {
-    if (newItem.trim() !== '') {
-      setItems([...items, newItem]);
-      setNewItem('');
-    }
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
   };
 
-  const deleteItem = (index) => {
-    const updatedItems = items.filter((_, i) => i !== index);
-    setItems(updatedItems);
-  };
-
-  const editItem = (index, newValue) => {
-    const updatedItems = [...items];
-    updatedItems[index] = newValue;
-    setItems(updatedItems);
-  };
-
-  const deleteAllItems = () => {
-    setItems([]);
+  const handleAddCard = () => {
+    setCardContent(inputValue);
+    setInputValue('');
   };
 
   return (
-    <div className="App">
-      <h1>ToDo App</h1>
-      <div>
-        <input
-          type="text"
-          value={newItem}
-          onChange={(e) => setNewItem(e.target.value)}
-        />
-        <button onClick={addItem}>Add</button>
-      </div>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            {item}
-            <button onClick={() => editItem(index, prompt('Enter new value:'))}>Edit</button>
-            <button onClick={() => deleteItem(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-      <button onClick={deleteAllItems}>Delete All</button>
+    <div className="container">
+      <input
+        type="text"
+        placeholder="Enter Card Content..."
+        value={inputValue}
+        onChange={handleInputChange}
+        className="input"
+      />
+      <button onClick={handleAddCard} className="button">
+        Add Card
+      </button>
+      {cardContent && (
+        <div className="card">
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, consectetur.</h3>
+          <p>{cardContent}</p>
+        </div>
+      )}
     </div>
   );
-}
-
+};
 
 export default App;
-
-
