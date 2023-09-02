@@ -1,38 +1,28 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Routes
+
+import Header from './components/Header';
+
+const Home = () => <div>Home</div>;
+const About = () => <div>About</div>;
+const Services = () => <div>Services</div>;
+const Schedule = () => <div>Schedule</div>;
+const Gallery = () => <div>Gallery</div>;
+const Blog = () => <div>Blog</div>;
 
 const App = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [cardContent, setCardContent] = useState('');
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
-  const handleAddCard = () => {
-    setCardContent(inputValue);
-    setInputValue('');
-  };
-
   return (
-    <div className="container">
-      <input
-        type="text"
-        placeholder="Enter Card Content..."
-        value={inputValue}
-        onChange={handleInputChange}
-        className="input"
-      />
-      <button onClick={handleAddCard} className="button">
-        Add Card
-      </button>
-      {cardContent && (
-        <div className="card">
-          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, consectetur.</h3>
-          <p>{cardContent}</p>
-        </div>
-      )}
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/Schedule" element={<Schedule />} />
+        <Route path="/Gallery" element={<Gallery />} />
+        <Route path="/Blog" element={<Blog />} />
+      </Routes>
+    </Router>
   );
 };
 
