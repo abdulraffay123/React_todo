@@ -9,6 +9,7 @@ const Services = () => <div>Services</div>;
 const Schedule = () => <div>Schedule</div>;
 const Gallery = () => <div>Gallery</div>;
 const Blog = () => <div>Blog</div>;
+const Contact = () => <div>Contact</div>;
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/Schedule" element={<Schedule />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Blog" element={<Blog />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
     </Router>
   );
